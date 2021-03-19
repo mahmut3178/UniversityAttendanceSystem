@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6756ABB-378F-4228-B441-A30A6A2D2032}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinForm.UI</RootNamespace>
+    <AssemblyName>WinForm.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.3.3\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\DelegateAction.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\AdminMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminMainPage.Designer.cs">
+      <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminTimeTablePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminTimeTablePage.Designer.cs">
+      <DependentUpon>AdminTimeTablePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangeUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChangeUserPassword.Designer.cs">
+      <DependentUpon>ChangeUserPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MessageOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MessageOk.Designer.cs">
+      <DependentUpon>MessageOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MessageYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\MessageYesNo.Designer.cs">
+      <DependentUpon>MessageYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\MMessageBox.cs" />
+    <Compile Include="UI\CourseSubjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CourseSubjectPage.Designer.cs">
+      <DependentUpon>CourseSubjectPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CRUDSubjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CRUDSubjectPage.Designer.cs">
+      <DependentUpon>CRUDSubjectPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IntakeCoursePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\IntakeCoursePage.Designer.cs">
+      <DependentUpon>IntakeCoursePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LecturerAllAttendancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LecturerAllAttendancePage.Designer.cs">
+      <DependentUpon>LecturerAllAttendancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LecturerMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LecturerMainPage.Designer.cs">
+      <DependentUpon>LecturerMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageIntake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageIntake.Designer.cs">
+      <DependentUpon>ManageIntake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageLecturerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageLecturerPage.Designer.cs">
+      <DependentUpon>ManageLecturerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageStudentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageStudentPage.Designer.cs">
+      <DependentUpon>ManageStudentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LecturerStudentAttendancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LecturerStudentAttendancePage.Designer.cs">
+      <DependentUpon>LecturerStudentAttendancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentAttendancePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentAttendancePage.Designer.cs">
+      <DependentUpon>StudentAttendancePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentMainPage.Designer.cs">
+      <DependentUpon>StudentMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentTimeTablePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentTimeTablePage.Designer.cs">
+      <DependentUpon>StudentTimeTablePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StudentUserProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StudentUserProfilePage.Designer.cs">
+      <DependentUpon>StudentUserProfilePage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\AdminMainPage.resx">
+      <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminTimeTablePage.resx">
+      <DependentUpon>AdminTimeTablePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChangeUserPassword.resx">
+      <DependentUpon>ChangeUserPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MessageOk.resx">
+      <DependentUpon>MessageOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\MessageYesNo.resx">
+      <DependentUpon>MessageYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CourseSubjectPage.resx">
+      <DependentUpon>CourseSubjectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CRUDSubjectPage.resx">
+      <DependentUpon>CRUDSubjectPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\IntakeCoursePage.resx">
+      <DependentUpon>IntakeCoursePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LecturerAllAttendancePage.resx">
+      <DependentUpon>LecturerAllAttendancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LecturerMainPage.resx">
+      <DependentUpon>LecturerMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageIntake.resx">
+      <DependentUpon>ManageIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageLecturerPage.resx">
+      <DependentUpon>ManageLecturerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageStudentPage.resx">
+      <DependentUpon>ManageStudentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LecturerStudentAttendancePage.resx">
+      <DependentUpon>LecturerStudentAttendancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StudentAttendancePage.resx">
+      <DependentUpon>StudentAttendancePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StudentMainPage.resx">
+      <DependentUpon>StudentMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StudentTimeTablePage.resx">
+      <DependentUpon>StudentTimeTablePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StudentUserProfilePage.resx">
+      <DependentUpon>StudentUserProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{2E0D3AFB-CF30-4496-94EE-C2E402797C92}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{BE614600-4929-4E08-8E4D-85745249DEE0}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{285C2E9B-C42B-4601-9C29-2176C8F3BBCF}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AsiaPacificUniversityOfTechnology&amp;Innovation.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_home_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookybook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lecturer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_logout_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_ok_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_ico1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_delete_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1497835.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StudentLecturerTimeTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenBubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bubbleRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_ico.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
